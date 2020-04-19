@@ -1,0 +1,3 @@
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/rebuild_cache.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/TJE.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/edit_cache.dir

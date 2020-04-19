@@ -1,0 +1,91 @@
+[
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/main.cpp.o -c /home/js/Documents/TJE2020_2D/src/main.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/main.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/game.cpp.o -c /home/js/Documents/TJE2020_2D/src/game.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/game.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/framework.cpp.o -c /home/js/Documents/TJE2020_2D/src/framework.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/framework.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/utils.cpp.o -c /home/js/Documents/TJE2020_2D/src/utils.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/utils.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/image.cpp.o -c /home/js/Documents/TJE2020_2D/src/image.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/image.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/input.cpp.o -c /home/js/Documents/TJE2020_2D/src/input.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/input.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/synth.cpp.o -c /home/js/Documents/TJE2020_2D/src/synth.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/synth.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/collisions.cpp.o -c /home/js/Documents/TJE2020_2D/src/collisions.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/collisions.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/scene.cpp.o -c /home/js/Documents/TJE2020_2D/src/scene.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/scene.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/sprite.cpp.o -c /home/js/Documents/TJE2020_2D/src/sprite.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/sprite.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/controlls.cpp.o -c /home/js/Documents/TJE2020_2D/src/controlls.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/controlls.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/map.cpp.o -c /home/js/Documents/TJE2020_2D/src/map.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/map.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/scenesprite.cpp.o -c /home/js/Documents/TJE2020_2D/src/scenesprite.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/scenesprite.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o -c /home/js/Documents/TJE2020_2D/src/Scenes/TestScene.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/Scenes/TestScene.cpp"
+},
+
+{
+  "directory": "/home/js/Documents/TJE2020_2D/build",
+  "command": "/usr/bin/g++   -I../src -I/usr/include/SDL2  -g   -std=gnu++11 -o CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o -c /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.cpp",
+  "file": "/home/js/Documents/TJE2020_2D/src/Managers/ImageManager.cpp"
+}
+]
