@@ -155,7 +155,7 @@ void TestScene::loadScene(int index) {
                     break;
                 case PLAYER:
 					new_spr = Sprite(Area(0,16,16,16));
-                    char_id = add_obj_to_scene(new_spr, x_coord, y_coord, true, "player");
+                    char_id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 12, 16), true, "player");
 					new_spr = Sprite(Area(0, 16 * 2, 32, 32));
 					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "area");
                     
@@ -175,11 +175,11 @@ void TestScene::loadScene(int index) {
                     break;
                 case NPC1:
                     new_spr = Sprite(Area(0, 16*2 ,16,16));
-                    id = add_obj_to_scene(new_spr, x_coord, y_coord, true, "npc");
+                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 12, 12), true, "npc");
                     
                     // Add movement behabiours
                     new_beh.active = false;
-                    new_beh.pc_mov.config(GRAVITY, SPEED, JUMP_SPEED, JUMP_DURATION);
+                    new_beh.pc_mov.config(60, 110, 100, JUMP_DURATION);
                     new_beh.type = PC_SMALL;
 
                     active_PCs[id] = new_beh;
