@@ -111,6 +111,8 @@ set( Framework
     src/map.h
     src/scenesprite.h
     src/scenesprite.cpp
+    src/moving.h
+    src/moving.cpp
     src/Scenes/TestScene.cpp
     src/Scenes/TestScene.h
     src/Managers/ImageManager.cpp

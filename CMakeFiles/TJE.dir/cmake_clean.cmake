@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TJE.dir/src/input.cpp.o"
   "CMakeFiles/TJE.dir/src/main.cpp.o"
   "CMakeFiles/TJE.dir/src/map.cpp.o"
+  "CMakeFiles/TJE.dir/src/moving.cpp.o"
   "CMakeFiles/TJE.dir/src/scene.cpp.o"
   "CMakeFiles/TJE.dir/src/scenesprite.cpp.o"
   "CMakeFiles/TJE.dir/src/sprite.cpp.o"

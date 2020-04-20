@@ -472,6 +472,33 @@ src/map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/map.cpp.s
 .PHONY : src/map.cpp.s
 
+src/moving.o: src/moving.cpp.o
+
+.PHONY : src/moving.o
+
+# target to build an object file
+src/moving.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/moving.cpp.o
+.PHONY : src/moving.cpp.o
+
+src/moving.i: src/moving.cpp.i
+
+.PHONY : src/moving.i
+
+# target to preprocess a source file
+src/moving.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/moving.cpp.i
+.PHONY : src/moving.cpp.i
+
+src/moving.s: src/moving.cpp.s
+
+.PHONY : src/moving.s
+
+# target to generate assembly for a file
+src/moving.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/moving.cpp.s
+.PHONY : src/moving.cpp.s
+
 src/scene.o: src/scene.cpp.o
 
 .PHONY : src/scene.o
@@ -651,6 +678,9 @@ help:
 	@echo "... src/map.o"
 	@echo "... src/map.i"
 	@echo "... src/map.s"
+	@echo "... src/moving.o"
+	@echo "... src/moving.i"
+	@echo "... src/moving.s"
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"

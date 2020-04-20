@@ -16,10 +16,23 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o
  src/image.h
  src/includes.h
  src/map.h
+ src/moving.h
  src/scene.h
  src/scenesprite.h
  src/sprite.h
  src/utils.h
+ tweeny/include/dispatcher.h
+ tweeny/include/easing.h
+ tweeny/include/easingresolve.h
+ tweeny/include/int2type.h
+ tweeny/include/tween.h
+ tweeny/include/tween.tcc
+ tweeny/include/tweenone.tcc
+ tweeny/include/tweenpoint.h
+ tweeny/include/tweenpoint.tcc
+ tweeny/include/tweentraits.h
+ tweeny/include/tweeny.h
+ tweeny/include/tweeny.tcc
 CMakeFiles/TJE.dir/src/collisions.cpp.o
  /home/js/Documents/TJE2020_2D/src/collisions.cpp
  /home/js/Documents/TJE2020_2D/src/collisions.h
@@ -53,6 +66,19 @@ CMakeFiles/TJE.dir/src/game.cpp.o
  /home/js/Documents/TJE2020_2D/src/utils.h
  src/Managers/ImageManager.h
  src/map.h
+ src/moving.h
+ tweeny/include/dispatcher.h
+ tweeny/include/easing.h
+ tweeny/include/easingresolve.h
+ tweeny/include/int2type.h
+ tweeny/include/tween.h
+ tweeny/include/tween.tcc
+ tweeny/include/tweenone.tcc
+ tweeny/include/tweenpoint.h
+ tweeny/include/tweenpoint.tcc
+ tweeny/include/tweentraits.h
+ tweeny/include/tweeny.h
+ tweeny/include/tweeny.tcc
 CMakeFiles/TJE.dir/src/image.cpp.o
  /home/js/Documents/TJE2020_2D/src/framework.h
  /home/js/Documents/TJE2020_2D/src/image.cpp
@@ -84,6 +110,22 @@ CMakeFiles/TJE.dir/src/main.cpp.o
 CMakeFiles/TJE.dir/src/map.cpp.o
  /home/js/Documents/TJE2020_2D/src/map.cpp
  /home/js/Documents/TJE2020_2D/src/map.h
+CMakeFiles/TJE.dir/src/moving.cpp.o
+ /home/js/Documents/TJE2020_2D/src/framework.h
+ /home/js/Documents/TJE2020_2D/src/moving.cpp
+ /home/js/Documents/TJE2020_2D/src/moving.h
+ tweeny/include/dispatcher.h
+ tweeny/include/easing.h
+ tweeny/include/easingresolve.h
+ tweeny/include/int2type.h
+ tweeny/include/tween.h
+ tweeny/include/tween.tcc
+ tweeny/include/tweenone.tcc
+ tweeny/include/tweenpoint.h
+ tweeny/include/tweenpoint.tcc
+ tweeny/include/tweentraits.h
+ tweeny/include/tweeny.h
+ tweeny/include/tweeny.tcc
 CMakeFiles/TJE.dir/src/scene.cpp.o
  /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.h
  /home/js/Documents/TJE2020_2D/src/collisions.h

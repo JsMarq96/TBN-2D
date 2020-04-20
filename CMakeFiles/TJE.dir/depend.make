@@ -15,10 +15,23 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/framework.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/image.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/includes.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/map.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/moving.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/scene.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/scenesprite.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/sprite.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/utils.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/dispatcher.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/easing.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/easingresolve.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/int2type.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tween.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tween.tcc
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweenone.tcc
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweenpoint.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweenpoint.tcc
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweentraits.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweeny.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/tweeny.tcc
 
 CMakeFiles/TJE.dir/src/collisions.cpp.o: src/collisions.cpp
 CMakeFiles/TJE.dir/src/collisions.cpp.o: src/collisions.h
@@ -52,6 +65,19 @@ CMakeFiles/TJE.dir/src/game.cpp.o: src/synth.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/utils.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/Managers/ImageManager.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/map.h
+CMakeFiles/TJE.dir/src/game.cpp.o: src/moving.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/dispatcher.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/easing.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/easingresolve.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/int2type.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tween.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tween.tcc
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweenone.tcc
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweenpoint.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweenpoint.tcc
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweentraits.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweeny.h
+CMakeFiles/TJE.dir/src/game.cpp.o: tweeny/include/tweeny.tcc
 
 CMakeFiles/TJE.dir/src/image.cpp.o: src/framework.h
 CMakeFiles/TJE.dir/src/image.cpp.o: src/image.cpp
@@ -83,6 +109,22 @@ CMakeFiles/TJE.dir/src/main.cpp.o: src/utils.h
 
 CMakeFiles/TJE.dir/src/map.cpp.o: src/map.cpp
 CMakeFiles/TJE.dir/src/map.cpp.o: src/map.h
+
+CMakeFiles/TJE.dir/src/moving.cpp.o: src/framework.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: src/moving.cpp
+CMakeFiles/TJE.dir/src/moving.cpp.o: src/moving.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/dispatcher.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/easing.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/easingresolve.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/int2type.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tween.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tween.tcc
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweenone.tcc
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweenpoint.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweenpoint.tcc
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweentraits.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweeny.h
+CMakeFiles/TJE.dir/src/moving.cpp.o: tweeny/include/tweeny.tcc
 
 CMakeFiles/TJE.dir/src/scene.cpp.o: src/Managers/ImageManager.h
 CMakeFiles/TJE.dir/src/scene.cpp.o: src/collisions.h

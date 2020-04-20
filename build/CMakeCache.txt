@@ -271,6 +271,24 @@ OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Attempts to build the documentation. You'll need doxygen and
+// graphviz installed
+TWEENY_BUILD_DOCUMENTATION:BOOL=OFF
+
+//Build examples contained in examples/ folder. It might require
+// additional dependencies.
+TWEENY_BUILD_EXAMPLES:BOOL=ON
+
+//Attempts to build extra goodies on extras/ folder. It will require
+// additional dependencies
+TWEENY_BUILD_EXTRAS:BOOL=ON
+
+//Value Computed by CMake
+Tweeny_BINARY_DIR:STATIC=/home/js/Documents/TJE2020_2D/build/tweeny
+
+//Value Computed by CMake
+Tweeny_SOURCE_DIR:STATIC=/home/js/Documents/TJE2020_2D/tweeny
+
 //Path to a library.
 pkgcfg_lib_SDL2_SDL2:FILEPATH=/usr/lib/libSDL2.so
 
@@ -377,7 +395,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

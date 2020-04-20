@@ -36,147 +36,27 @@ include rules.ninja
 
 
 #############################################
-# Utility command for rebuild_cache
+# Utility command for install/strip
 
-build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/js/Documents/TJE2020_2D/build && /usr/bin/cmake --regenerate-during-build -S/home/js/Documents/TJE2020_2D -B/home/js/Documents/TJE2020_2D/build
-  DESC = Running CMake to regenerate build system...
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
   pool = console
   restat = 1
 
-build rebuild_cache: phony CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target TJE
+build install/strip: phony CMakeFiles/install/strip.util
 
 
 #############################################
-# Order-only phony target for TJE
+# Utility command for install/local
 
-build cmake_object_order_depends_target_TJE_DEBUG: phony || CMakeFiles/TJE.dir
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
 
-build CMakeFiles/TJE.dir/src/main.cpp.o: CXX_COMPILER__TJE_Debug ../src/main.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/main.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/game.cpp.o: CXX_COMPILER__TJE_Debug ../src/game.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/game.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/framework.cpp.o: CXX_COMPILER__TJE_Debug ../src/framework.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/framework.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/utils.cpp.o: CXX_COMPILER__TJE_Debug ../src/utils.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/utils.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/image.cpp.o: CXX_COMPILER__TJE_Debug ../src/image.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/image.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/input.cpp.o: CXX_COMPILER__TJE_Debug ../src/input.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/input.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/synth.cpp.o: CXX_COMPILER__TJE_Debug ../src/synth.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/synth.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/collisions.cpp.o: CXX_COMPILER__TJE_Debug ../src/collisions.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/collisions.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/scene.cpp.o: CXX_COMPILER__TJE_Debug ../src/scene.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/scene.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/sprite.cpp.o: CXX_COMPILER__TJE_Debug ../src/sprite.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/sprite.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/controlls.cpp.o: CXX_COMPILER__TJE_Debug ../src/controlls.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/controlls.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/map.cpp.o: CXX_COMPILER__TJE_Debug ../src/map.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/map.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/scenesprite.cpp.o: CXX_COMPILER__TJE_Debug ../src/scenesprite.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/scenesprite.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
-
-build CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: CXX_COMPILER__TJE_Debug ../src/Scenes/TestScene.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Scenes
-
-build CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: CXX_COMPILER__TJE_Debug ../src/Managers/ImageManager.cpp || cmake_object_order_depends_target_TJE_DEBUG
-  DEP_FILE = CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o.d
-  FLAGS = -g   -std=gnu++11
-  INCLUDES = -I../src -I/usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Managers
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target TJE
-
-
-#############################################
-# Link the executable TJE
-
-build TJE: CXX_EXECUTABLE_LINKER__TJE_Debug CMakeFiles/TJE.dir/src/main.cpp.o CMakeFiles/TJE.dir/src/game.cpp.o CMakeFiles/TJE.dir/src/framework.cpp.o CMakeFiles/TJE.dir/src/utils.cpp.o CMakeFiles/TJE.dir/src/image.cpp.o CMakeFiles/TJE.dir/src/input.cpp.o CMakeFiles/TJE.dir/src/synth.cpp.o CMakeFiles/TJE.dir/src/collisions.cpp.o CMakeFiles/TJE.dir/src/scene.cpp.o CMakeFiles/TJE.dir/src/sprite.cpp.o CMakeFiles/TJE.dir/src/controlls.cpp.o CMakeFiles/TJE.dir/src/map.cpp.o CMakeFiles/TJE.dir/src/scenesprite.cpp.o CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o | /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so
-  FLAGS = -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lGL  -lGLU  -lglut  -lXmu  -lXi  -lSDL2
-  OBJECT_DIR = CMakeFiles/TJE.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = TJE
-  TARGET_PDB = TJE.dbg
+build install/local: phony CMakeFiles/install/local.util
 
 
 #############################################
@@ -191,7 +71,276 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target TJE
+
+
+#############################################
+# Order-only phony target for TJE
+
+build cmake_object_order_depends_target_TJE_DEBUG: phony || CMakeFiles/TJE.dir
+
+build CMakeFiles/TJE.dir/src/main.cpp.o: CXX_COMPILER__TJE_Debug ../src/main.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/main.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/game.cpp.o: CXX_COMPILER__TJE_Debug ../src/game.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/game.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/framework.cpp.o: CXX_COMPILER__TJE_Debug ../src/framework.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/framework.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/utils.cpp.o: CXX_COMPILER__TJE_Debug ../src/utils.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/utils.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/image.cpp.o: CXX_COMPILER__TJE_Debug ../src/image.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/image.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/input.cpp.o: CXX_COMPILER__TJE_Debug ../src/input.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/input.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/synth.cpp.o: CXX_COMPILER__TJE_Debug ../src/synth.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/synth.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/collisions.cpp.o: CXX_COMPILER__TJE_Debug ../src/collisions.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/collisions.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/scene.cpp.o: CXX_COMPILER__TJE_Debug ../src/scene.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/scene.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/sprite.cpp.o: CXX_COMPILER__TJE_Debug ../src/sprite.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/sprite.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/controlls.cpp.o: CXX_COMPILER__TJE_Debug ../src/controlls.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/controlls.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/map.cpp.o: CXX_COMPILER__TJE_Debug ../src/map.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/map.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/scenesprite.cpp.o: CXX_COMPILER__TJE_Debug ../src/scenesprite.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/scenesprite.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/moving.cpp.o: CXX_COMPILER__TJE_Debug ../src/moving.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/moving.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src
+
+build CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: CXX_COMPILER__TJE_Debug ../src/Scenes/TestScene.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Scenes
+
+build CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: CXX_COMPILER__TJE_Debug ../src/Managers/ImageManager.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Managers
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target TJE
+
+
+#############################################
+# Link the executable TJE
+
+build TJE: CXX_EXECUTABLE_LINKER__TJE_Debug CMakeFiles/TJE.dir/src/main.cpp.o CMakeFiles/TJE.dir/src/game.cpp.o CMakeFiles/TJE.dir/src/framework.cpp.o CMakeFiles/TJE.dir/src/utils.cpp.o CMakeFiles/TJE.dir/src/image.cpp.o CMakeFiles/TJE.dir/src/input.cpp.o CMakeFiles/TJE.dir/src/synth.cpp.o CMakeFiles/TJE.dir/src/collisions.cpp.o CMakeFiles/TJE.dir/src/scene.cpp.o CMakeFiles/TJE.dir/src/sprite.cpp.o CMakeFiles/TJE.dir/src/controlls.cpp.o CMakeFiles/TJE.dir/src/map.cpp.o CMakeFiles/TJE.dir/src/scenesprite.cpp.o CMakeFiles/TJE.dir/src/moving.cpp.o CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o | /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so
+  FLAGS = -g
+  LINK_FLAGS = -rdynamic
+  LINK_LIBRARIES = -lGL  -lGLU  -lglut  -lXmu  -lXi  -lSDL2
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = TJE
+  TARGET_PDB = TJE.dbg
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build && /usr/bin/cmake --regenerate-during-build -S/home/js/Documents/TJE2020_2D -B/home/js/Documents/TJE2020_2D/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/js/Documents/TJE2020_2D/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build tweeny/CMakeFiles/install/strip.util: CUSTOM_COMMAND tweeny/all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build/tweeny && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tweeny/install/strip: phony tweeny/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build tweeny/CMakeFiles/install/local.util: CUSTOM_COMMAND tweeny/all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build/tweeny && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tweeny/install/local: phony tweeny/CMakeFiles/install/local.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target tweeny-dummy
+
+
+#############################################
+# Order-only phony target for tweeny-dummy
+
+build cmake_object_order_depends_target_tweeny-dummy_DEBUG: phony || tweeny/CMakeFiles/tweeny-dummy.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target tweeny-dummy
+
+
+#############################################
+# Link the static library tweeny/libtweeny-dummy.a
+
+build tweeny/libtweeny-dummy.a: CXX_STATIC_LIBRARY_LINKER__tweeny-dummy_Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = tweeny/CMakeFiles/tweeny-dummy.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tweeny/libtweeny-dummy.a
+  TARGET_PDB = tweeny-dummy.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build tweeny/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build/tweeny && /usr/bin/cmake-gui -S/home/js/Documents/TJE2020_2D -B/home/js/Documents/TJE2020_2D/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build tweeny/edit_cache: phony tweeny/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tweeny/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build/tweeny && /usr/bin/cmake --regenerate-during-build -S/home/js/Documents/TJE2020_2D -B/home/js/Documents/TJE2020_2D/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tweeny/rebuild_cache: phony tweeny/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for install
+
+build tweeny/CMakeFiles/install.util: CUSTOM_COMMAND tweeny/all
+  COMMAND = cd /home/js/Documents/TJE2020_2D/build/tweeny && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tweeny/install: phony tweeny/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build tweeny/list_install_components: phony
+
+# =============================================================================
 # Target aliases.
+
+build libtweeny-dummy.a: phony tweeny/libtweeny-dummy.a
+
+build tweeny-dummy: phony tweeny/libtweeny-dummy.a
 
 # =============================================================================
 # Folder targets.
@@ -201,7 +350,14 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 #############################################
 # Folder: /home/js/Documents/TJE2020_2D/build
 
-build all: phony TJE
+build all: phony TJE tweeny/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/js/Documents/TJE2020_2D/build/tweeny
+
+build tweeny/all: phony
 
 # =============================================================================
 # Unknown Build Time Dependencies.
@@ -215,14 +371,14 @@ build all: phony TJE
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/share/cmake-3.17/Modules/CMakeCInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.17/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU.cmake /usr/share/cmake-3.17/Modules/FindGLEW.cmake /usr/share/cmake-3.17/Modules/FindGLUT.cmake /usr/share/cmake-3.17/Modules/FindOpenGL.cmake /usr/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.17/Modules/FindPackageMessage.cmake /usr/share/cmake-3.17/Modules/FindPkgConfig.cmake /usr/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.17/Modules/Platform/Linux.cmake /usr/share/cmake-3.17/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeCXXCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../tweeny/CMakeLists.txt ../tweeny/cmake/SetupExports.cmake ../tweeny/cmake/SetupVersion.cmake /usr/share/cmake-3.17/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.17/Modules/CMakeCInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.17/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.17/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU.cmake /usr/share/cmake-3.17/Modules/FindGLEW.cmake /usr/share/cmake-3.17/Modules/FindGLUT.cmake /usr/share/cmake-3.17/Modules/FindOpenGL.cmake /usr/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.17/Modules/FindPackageMessage.cmake /usr/share/cmake-3.17/Modules/FindPkgConfig.cmake /usr/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.17/Modules/Platform/Linux.cmake /usr/share/cmake-3.17/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.17/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeCXXCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/share/cmake-3.17/Modules/CMakeCInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.17/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU.cmake /usr/share/cmake-3.17/Modules/FindGLEW.cmake /usr/share/cmake-3.17/Modules/FindGLUT.cmake /usr/share/cmake-3.17/Modules/FindOpenGL.cmake /usr/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.17/Modules/FindPackageMessage.cmake /usr/share/cmake-3.17/Modules/FindPkgConfig.cmake /usr/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.17/Modules/Platform/Linux.cmake /usr/share/cmake-3.17/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeCXXCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../tweeny/CMakeLists.txt ../tweeny/cmake/SetupExports.cmake ../tweeny/cmake/SetupVersion.cmake /usr/share/cmake-3.17/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.17/Modules/CMakeCInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.17/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.17/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Compiler/GNU.cmake /usr/share/cmake-3.17/Modules/FindGLEW.cmake /usr/share/cmake-3.17/Modules/FindGLUT.cmake /usr/share/cmake-3.17/Modules/FindOpenGL.cmake /usr/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.17/Modules/FindPackageMessage.cmake /usr/share/cmake-3.17/Modules/FindPkgConfig.cmake /usr/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.17/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.17/Modules/Platform/Linux.cmake /usr/share/cmake-3.17/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.17/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.17.1/CMakeCCompiler.cmake CMakeFiles/3.17.1/CMakeCXXCompiler.cmake CMakeFiles/3.17.1/CMakeSystem.cmake: phony
 
 
 #############################################

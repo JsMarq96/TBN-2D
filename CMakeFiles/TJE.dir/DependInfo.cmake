@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/js/Documents/TJE2020_2D/src/input.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/input.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/main.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/main.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/map.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/map.cpp.o"
+  "/home/js/Documents/TJE2020_2D/src/moving.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/moving.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/scene.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/scene.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/scenesprite.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/scenesprite.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/sprite.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/sprite.cpp.o"

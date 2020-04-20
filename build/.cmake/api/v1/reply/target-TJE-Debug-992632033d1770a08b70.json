@@ -26,25 +26,31 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 128,
+				"line" : 131,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 184,
+				"line" : 191,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 122,
+				"line" : 125,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 183,
+				"line" : 190,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 135,
 				"parent" : 0
 			}
 		]
@@ -70,6 +76,10 @@
 				{
 					"backtrace" : 4,
 					"path" : "/usr/include/SDL2"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/js/Documents/TJE2020_2D/tweeny/include"
 				}
 			],
 			"language" : "CXX",
@@ -88,8 +98,9 @@
 				20,
 				22,
 				25,
-				26,
-				28
+				27,
+				28,
+				30
 			]
 		}
 	],
@@ -182,7 +193,9 @@
 				26,
 				27,
 				28,
-				29
+				29,
+				30,
+				31
 			]
 		}
 	],
@@ -329,6 +342,17 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/scenesprite.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/moving.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/moving.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{

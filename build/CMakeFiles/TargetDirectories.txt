@@ -1,3 +1,14 @@
-/home/js/Documents/TJE2020_2D/build/CMakeFiles/rebuild_cache.dir
-/home/js/Documents/TJE2020_2D/build/CMakeFiles/TJE.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/install/strip.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/install/local.dir
 /home/js/Documents/TJE2020_2D/build/CMakeFiles/edit_cache.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/TJE.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/rebuild_cache.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/list_install_components.dir
+/home/js/Documents/TJE2020_2D/build/CMakeFiles/install.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/install/strip.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/install/local.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/tweeny-dummy.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/edit_cache.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/rebuild_cache.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/install.dir
+/home/js/Documents/TJE2020_2D/build/tweeny/CMakeFiles/list_install_components.dir

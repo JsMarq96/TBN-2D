@@ -5,7 +5,6 @@ void TestScene::init() {
     loadScene(0);
     area_img = *ImageManager::getImage("data/circle.tga");
     area_img.scale(48, 48);
-    char_speed = Vector2(0,0);
     camera_speed = Vector2(0,0);
 
     moving_objs.push_back(char_id);
@@ -15,8 +14,12 @@ void TestScene::init() {
         }, "player", "block");
 
     col_man.add_collision_event([=](int a, int b) {
+            this->block_character_collision(a, b);
+        }, "npc", "block");
+
+    col_man.add_collision_event([=](int a, int b) {
             this->area_npc_collision(a, b);
-        }, "area", "npc1");
+        }, "area", "npc");
 
     col_man.add_collision_event([=](int a, int b) {
             this->character_stairs_collision(a, b);
@@ -24,8 +27,21 @@ void TestScene::init() {
 }
 
 void TestScene::update(double seconds_elapsed) {
-    // Unconfig Misc game flags for collisions
-    in_stairs = false;
+    // Calculate gravity and configure each kinetic object for the collision
+    // detection
+    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
+        int obj_id = it->first;
+        if (obj_id != char_id)
+            active_PCs[obj_id].active = false;
+
+        active_PCs[obj_id].pc_mov.calculate_gravity();
+
+        // Unconfig Misc game flags for collisions
+        active_PCs[obj_id].pc_mov.is_in_ground(false);
+        active_PCs[obj_id].pc_mov.is_in_stairs(false);
+    }
+
+    //in_ground = false;
     std::stack<Collision> cols = collision_detection();
 
     // Execute collision events before calculating the movements
@@ -35,38 +51,54 @@ void TestScene::update(double seconds_elapsed) {
         col.event(col.id_1, col.id_2);
     }
 
-    //Update the character position
-    objects_in_scene[char_id].position.x += seconds_elapsed * char_speed.x;
-    objects_in_scene[char_id].position.y += seconds_elapsed * char_speed.y;
+    // Apply the results of the collision and gravity calculations to the
+    // objects
+    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
+        int obj_id = it->first;
 
-    // Make the area trail the user in its center
-    objects_in_scene[area_id].position.x = objects_in_scene[char_id].position.x - 16;
-    objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 16;
-    
-    // Make the camera trail the user
-    camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
-    camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
+        Vector2 obj_speed = active_PCs[obj_id].pc_mov.get_speed();
+        // Update on screen position
+        objects_in_scene[obj_id].position.x += seconds_elapsed * obj_speed.x;
+        objects_in_scene[obj_id].position.y += seconds_elapsed * obj_speed.y;
+        
+        if (obj_id == char_id)
+            // Make the area trail the user in its center
+            objects_in_scene[area_id].position.x = objects_in_scene[char_id].position.x - 16;
+            objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 16;
+            
+            // Make the camera trail the user
+            camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
+            camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
+
+    }
 }
 
 void TestScene::button_press_events(int buttons_pressed) {
-    if (isPressed(UP, buttons_pressed) && in_stairs) {
-        char_speed.y = -1 * SPEED;
-    } else if (isPressed(DOWN, buttons_pressed)) { 
-        char_speed.y = SPEED;
-    } else {
-        char_speed.y = 0;
-    }
+    Vector2 directions;
+
+    directions.y = 0;
 
     if (isPressed(LEFT, buttons_pressed)) {
-        char_speed.x = -1 * SPEED;
+        directions.x = -1;
     } else if (isPressed(RIGHT, buttons_pressed)) {
-        char_speed.x = SPEED;
+        directions.x = 1;
     } else {
-        char_speed.x = 0;
+        directions.x = 0;
     }
 
-    // Gravity
-    char_speed.y  += 50;
+    // Apply the movement for each active obejct
+    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) { 
+        int obj_id = it->first;
+
+        if (!active_PCs[obj_id].active)
+            continue;
+
+        active_PCs[obj_id].pc_mov.move_to_direction(directions.x, directions.y);
+
+        if (isPressed(UP, buttons_pressed)) {
+            active_PCs[obj_id].pc_mov.try_to_start_jump();
+        }
+    }
 }
 
 void TestScene::loadScene(int index) {
@@ -84,6 +116,8 @@ void TestScene::loadScene(int index) {
 			int x_coord = x * CELL_SIZE;
 			int y_coord = y * CELL_SIZE;
             Sprite new_spr;
+            PC_behaviour new_beh;
+            int id;
             //std::cout << t1.height << "-" << t1.width << std::endl;            
             switch(element) {
                 case GROUND_BLOCK:
@@ -97,6 +131,12 @@ void TestScene::loadScene(int index) {
 					new_spr = Sprite(Area(0, 16 * 2, 32, 32));
 					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "area");
                     
+                    // Character behebiuor movement
+                    new_beh.active = true;
+                    new_beh.pc_mov.config(GRAVITY, SPEED, JUMP_SPEED, JUMP_DURATION);
+                    new_beh.type = PC_PLAYER;
+
+                    active_PCs[char_id] = new_beh;
                     moving_objs.push_back(area_id);
                     std::cout << " + Added main character at " << x * CELL_SIZE << "," << y * CELL_SIZE  << " with id "<< char_id << std::endl;
                     break;
@@ -107,7 +147,16 @@ void TestScene::loadScene(int index) {
                     break;
                 case NPC1:
                     new_spr = Sprite(Area(0, 16*2 ,16,16));
-                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "npc1");
+                    id = add_obj_to_scene(new_spr, x_coord, y_coord, true, "npc");
+                    
+                    // Add movement behabiours
+                    new_beh.active = false;
+                    new_beh.pc_mov.config(GRAVITY, SPEED, JUMP_SPEED, JUMP_DURATION);
+                    new_beh.type = PC_SMALL;
+
+                    active_PCs[id] = new_beh;
+
+                    moving_objs.push_back(id);
                     std::cout << " + Added NPC1 at " << x * CELL_SIZE << "," << y * CELL_SIZE  << " with id "<< char_id << std::endl;
                     break;
                 /*case GOAL:
@@ -161,26 +210,27 @@ void TestScene::block_character_collision(int player, int block) {
     if (direction.y == 0) {
         // We use the directions to clamp the directional speed of the character
         if (direction.x < 0) {
-            char_speed.x = clamp(char_speed.x, SPEED * -1, 0);
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
         } else if (direction.x > 0) {
-            char_speed.x = clamp(char_speed.x, 0, SPEED);
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(true);
         }
     }
 	
 	if (direction.x == 0) {
         if (direction.y < 0) {
-            char_speed.y = clamp(char_speed.y, SPEED * -1, 0);
+            active_PCs[player].pc_mov.is_in_ground(true);
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(false);
         } else if (direction.y > 0) {
-            char_speed.y = clamp(char_speed.y, 0, SPEED);
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
         }
     }
 }
 
 void TestScene::character_stairs_collision(int player, int block) {
-    //std::cout << "Starisss"<< std::endl;
-    in_stairs = true;
+    active_PCs[player].pc_mov.is_in_ground(true);
+    active_PCs[player].pc_mov.is_in_stairs(true);
 }
 
 void TestScene::area_npc_collision(int player, int npc) {
-    //std::cout << "In area!"<< std::endl;
+    active_PCs[npc].active = true;
 }
