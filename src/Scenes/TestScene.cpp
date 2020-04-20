@@ -252,6 +252,13 @@ void TestScene::block_character_collision(int player, int block) {
             active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
         }
     }
+
+     if (direction.x > 0 && direction.y > 0) {
+        active_PCs[player].pc_mov.restrict_move_on_x_axis(true);
+    }
+    if (direction.x < 0 && direction.y > 0) {
+        active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
+    }
 }
 
 void TestScene::character_stairs_collision(int player, int block) {

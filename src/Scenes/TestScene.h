@@ -9,9 +9,9 @@
 #include "tweeny.h"
 
 #define SPEED 100
-#define JUMP_SPEED 90
-#define JUMP_DURATION 10
-#define GRAVITY 60
+#define JUMP_SPEED 120
+#define JUMP_DURATION 5
+#define GRAVITY 70
 
 enum PC_Types {
     PC_PLAYER,
@@ -31,7 +31,6 @@ private:
 
     int char_id;
     int area_id;
-    tweeny::tween<int> char_jumpspeed;
 
     const char* levels[1] = {"data/level1.map"};
     int curr_level = 0;

@@ -53,6 +53,8 @@ void Movement::restrict_move_on_y_axis(bool up) {
     if (up) {
         // Restrict the displacement vector in the upwards movement
         obj_speed.y = clamp(obj_speed.y, 0, speed);
+        jumpspeed.seek(0);
+        is_jumping = false;
     } else {
         obj_speed.y = clamp(obj_speed.y, speed * -1, 0);
     }
