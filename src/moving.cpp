@@ -1,5 +1,9 @@
 #include "moving.h"
 
+Vector2 Movement::get_direction() {
+    return obj_speed / speed;
+}
+
 void Movement::calculate_gravity() {
     // Gravity
     if (is_jumping) {
@@ -55,6 +59,8 @@ void Movement::restrict_move_on_y_axis(bool up) {
 }
 
 Vector2 Movement::get_speed() {
+    if (obj_speed.x != 0)
+        x_orientation = obj_speed.x / speed;
     return obj_speed;
 }
 

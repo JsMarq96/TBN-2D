@@ -4,7 +4,7 @@
 Scene::Scene() {
 	//col_man = std::make_shared<CollisionsManager>();
 	last_inserted = 0;
-	level_tileset = *ImageManager::getImage("data/tileset_v3.tga");
+	level_tileset = *ImageManager::getImage("data/tileset_v4.tga");
 }
 
 /*Scene::Scene(std::shared_ptr<CollisionsManager> colman) {

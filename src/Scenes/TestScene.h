@@ -25,8 +25,6 @@ struct PC_behaviour {
     Movement pc_mov;
 };
 
-//PC_behaviour::PC_behaviour() {}
-
 class TestScene : Scene {
 private:
     Vector2 camera_speed;
@@ -47,7 +45,7 @@ public:
 
     void init();
     void loadScene(int index);
-    void update(double seconds_elapsed);
+    void update(double seconds_elapsed, double time);
     void button_press_events( int pressed_contrls);
     void render(Image *framebuffer); //{ Scene::render(framebuffer);}
     std::stack<Collision> collision_detection();

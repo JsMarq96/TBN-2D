@@ -51,7 +51,7 @@ public:
     map_scene_ids in_scene_elements;
     // Scene events
     virtual void delete_event() {};
-    virtual void update(double seconds_elapsed) {};
+    virtual void update(double seconds_elapsed, double time) {};
     virtual void button_press_events(int pressed_controls) {};
     virtual void init() {};
 

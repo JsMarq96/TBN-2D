@@ -19,6 +19,8 @@ private:
 
     Vector2 obj_speed;
 
+    int x_orientation;
+
 public:
     Movement() {};
     Movement(int w, int s, int js, int jd) {
@@ -36,7 +38,7 @@ public:
     void is_in_ground(bool is) {in_groud = is;};
     void try_to_start_jump();
 
-    
+    Vector2 get_direction();
 
     void calculate_gravity();
 
@@ -48,6 +50,8 @@ public:
     void restrict_move_on_y_axis(bool up);
 
     Vector2 get_speed();
+
+    int get_orientation() { return x_orientation;}
 
     void clean();
 };

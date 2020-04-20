@@ -26,7 +26,7 @@ void TestScene::init() {
         }, "player", "stairs");
 }
 
-void TestScene::update(double seconds_elapsed) {
+void TestScene::update(double seconds_elapsed, double time) {
     // Calculate gravity and configure each kinetic object for the collision
     // detection
     for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
@@ -69,7 +69,35 @@ void TestScene::update(double seconds_elapsed) {
             // Make the camera trail the user
             camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
             camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
+                
+        // Character animation
+        int orientation = active_PCs[obj_id].pc_mov.get_orientation();
 
+        if (obj_speed.x == 0 && obj_speed.y == 0) {
+            // Standing
+            if (orientation > 0) {
+                objects_in_scene[obj_id].image.set_indexes(0,0);
+            } else {
+                objects_in_scene[obj_id].image.set_indexes(15,0);
+            }
+            
+        } else  if (obj_speed.y == 0) {
+            // Walking cicle
+            if (orientation > 0) {
+                objects_in_scene[obj_id].image.set_indexes((((int) (time * 10)) % 6) + 1,0);
+            } else {
+                objects_in_scene[obj_id].image.set_indexes((((int) (time * 10)) % 6) + 8,0);
+            }
+            
+        } else {
+            // Jumping
+            if (orientation > 0) {
+                objects_in_scene[obj_id].image.set_indexes(0,4);
+            } else {
+                objects_in_scene[obj_id].image.set_indexes(1,4);
+            }
+            
+        }
     }
 }
 

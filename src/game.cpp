@@ -102,7 +102,7 @@ void Game::update(double seconds_elapsed)
 		pressed_controls ^= LEFT;
 	}
 	current_scene->button_press_events(pressed_controls);
-	current_scene->update(seconds_elapsed);
+	current_scene->update(seconds_elapsed, time);
 }
 
 //Keyboard event handler (sync input)
