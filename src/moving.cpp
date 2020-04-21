@@ -13,9 +13,15 @@ void Movement::calculate_gravity() {
         if (jumpspeed.progress() == 1) {
             jumpspeed.seek(0);
             is_jumping = false;
+            //std::cout << "Finished jump"<< std::endl;
         }
     }
     obj_speed.y  += weight;
+
+    // Collision array cleanup
+    for (int i = 0; i <= 8; i++) {
+        collision_orientations[i] = false;
+    }
 }
 
 void Movement::try_to_start_jump() {
@@ -61,6 +67,42 @@ void Movement::restrict_move_on_y_axis(bool up) {
 }
 
 Vector2 Movement::get_speed() {
+    // Limit movement by collisions
+    
+    if (collision_orientations[D_BOTTOM]) {
+        obj_speed.y = clamp(obj_speed.y, speed * -1, 0);
+
+        is_in_ground(true);
+    } 
+    
+    if (collision_orientations[D_TOP]) {
+        obj_speed.y = clamp(obj_speed.y, 0, speed);
+            is_jumping = false;
+            jumpspeed.seek(0);
+        
+    }
+
+    
+
+    /*if (in_groud) {
+        if (collision_orientations[D_RIGHT]) {
+        obj_speed.x = clamp(obj_speed.x, speed * -1, 0);
+        } 
+        if (collision_orientations[D_LEFT]) {
+            obj_speed.x = clamp(obj_speed.x, 0, speed);
+        }
+    } else {
+        if (collision_orientations[D_TOP_RIGHT] || collision_orientations[D_RIGHT] || collision_orientations[D_BOTTOM_RIGHT]) {
+            obj_speed.x = clamp(obj_speed.x, speed, 0);
+            //move_to(-3,0);
+        } 
+        if (collision_orientations[D_TOP_LEFT] || collision_orientations[D_LEFT] || collision_orientations[D_BOTTOM_LEFT]) {
+            obj_speed.x = clamp(obj_speed.x, 0, speed);
+            //move_to(4,0);
+        }
+    }*/
+    
+
     if (obj_speed.x != 0)
         x_orientation = obj_speed.x / speed;
     return obj_speed;
@@ -70,4 +112,30 @@ void Movement::clean() {
     in_groud = false;
     in_stairs = false;
 
+}
+
+void Movement::add_obstacle(Vector2 position) {
+    int id = 0;
+    if (position.x == 0 && position.y == 0){
+        int i = 0;
+    }
+   if (position.x == 0 && position.y == 1) {
+       id = D_TOP;
+   } else if (position.x == 1 && position.y == 1) {
+       id = D_TOP_LEFT;
+   } else if (position.x == 1 && position.y == 0) {
+       id = D_LEFT;
+   } else if (position.x == 1 && position.y == -1) {
+       id = D_BOTTOM_LEFT;
+   } else if (position.x == 0 && position.y == -1) {
+       id = D_BOTTOM;
+   } else if (position.x == -1 && position.y == -1) {
+       id = D_BOTTOM_RIGHT;
+   } else if (position.x == -1 && position.y == 0) {
+       id = D_RIGHT;
+   } else if (position.x == -1 && position.y == 1) {
+       id = D_TOP_RIGHT;
+   }
+
+   collision_orientations[id] = true;
 }

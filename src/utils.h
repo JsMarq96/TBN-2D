@@ -22,6 +22,7 @@ class Texture;
 bool inRange(int low, int high, int x);
 bool partially_inside(Area a1, Area a2);
  Vector2 direction_between_areas(Area a1, Area a2);
+Vector2 distance_between_area_center(Area a1, Area a2);
 
 //General functions **************
 long getTime(); //returns time since computer started (in milliseconds)

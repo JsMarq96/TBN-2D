@@ -8,10 +8,10 @@
 #include "moving.h"
 #include "tweeny.h"
 
-#define SPEED 100
-#define JUMP_SPEED 120
-#define JUMP_DURATION 5
-#define GRAVITY 70
+#define SPEED 80
+#define JUMP_SPEED 180
+#define JUMP_DURATION 3
+#define GRAVITY 100
 
 enum PC_Types {
     PC_PLAYER,

@@ -154,7 +154,7 @@ void TestScene::loadScene(int index) {
                     block_num++;
                     break;
                 case PLAYER:
-					new_spr = Sprite(Area(0,16,16,16));
+					new_spr = Sprite(Area(0,16,16,16));// 
                     char_id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 12, 16), true, "player");
 					new_spr = Sprite(Area(0, 16 * 2, 32, 32));
 					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "area");
@@ -174,8 +174,8 @@ void TestScene::loadScene(int index) {
                     stairs_num++;
                     break;
                 case NPC1:
-                    new_spr = Sprite(Area(0, 16*2 ,16,16));
-                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 12, 12), true, "npc");
+                    new_spr = Sprite(Area(0, 16*2 ,16,16));//
+                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 12, 12),true, "npc");
                     
                     // Add movement behabiours
                     new_beh.active = false;
@@ -229,13 +229,36 @@ std::stack<Collision> TestScene::collision_detection() {
 void TestScene::block_character_collision(int player, int block) {
     // Get the normalized direction vector between the center of the player,
     // to the center of the block
-	Vector2 direction = direction_between_areas(objects_in_scene[player].get_collision_rect_area(), 
-                                                objects_in_scene[block].get_collision_rect_area());
-	
+
+    Area a_player = objects_in_scene[player].get_collision_rect_area(), a_block = objects_in_scene[block].get_collision_rect_area();
+	Vector2 direction = direction_between_areas(a_player, a_block);
+    
+    active_PCs[player].pc_mov.add_obstacle(direction);
+
+    if (direction.x != 0 && direction.y == 0)
+        int i = 0;
+
+    Vector2 diff = distance_between_area_center(objects_in_scene[player].get_collision_rect_area(), objects_in_scene[block].get_collision_rect_area());
+
+    if (direction.x != 0 && direction.y == 0) {
+        if (direction.x == 1) {
+            objects_in_scene[player].position.x += (a_block.x + a_block.w) - a_player.x;
+        } else {
+            objects_in_scene[player].position.x -= (a_player.x + a_player.w) - a_block.x;
+        }
+    }
+         //diff.x - (objects_in_scene[player].col_rect_area.w/2);
+
+    //objects_in_scene[player].position.y += diff.y;
+    
+    /*if (direction.x == 0 && direction.y == -1) {
+        active_PCs[player].pc_mov.is_in_ground(true);
+    }*/
+    
     // Since we are only interested in "pure" lateral collisions 
     // (only left, or only right, or only bottom, or only top)
     // We can exclude the other ones (collision with the left and bottom...)
-    if (direction.y == 0) {
+    /*if (direction.y == 0) {
         // We use the directions to clamp the directional speed of the character
         if (direction.x < 0) {
             active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
@@ -253,16 +276,71 @@ void TestScene::block_character_collision(int player, int block) {
         }
     }
 
-     if (direction.x > 0 && direction.y > 0) {
+    if (direction.x > 0 && direction.y > 0) {
         active_PCs[player].pc_mov.restrict_move_on_x_axis(true);
     }
     if (direction.x < 0 && direction.y > 0) {
         active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
     }
+
+    if (direction.x < 0 && direction.y < 0) {
+        active_PCs[player].pc_mov.restrict_move_on_y_axis(false);
+    }*/
+
+    
+
+    /*if (direction.y == -1) {
+        active_PCs[player].pc_mov.is_in_ground(true);
+        active_PCs[player].pc_mov.restrict_move_on_y_axis(false);
+    } else if (direction.y == 1) {
+        active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+    }
+    
+
+    if (active_PCs[player].pc_mov.ground()) {
+        if (direction.x == 1 && direction.y >= 0) {
+            active_PCs[player].pc_mov.move_to(-1,0);
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(true);
+            //active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else if (direction.x == -1 && direction.y >= 0) {
+            active_PCs[player].pc_mov.move_to(1,0);
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
+            //active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        }
+    } else {
+
+    }*/
+    
+    
+
+    /*if (direction.x == 1) {
+        if (direction.y == 1) {
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else if (direction.y == -1) {
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else {
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(true);
+        }
+    } else if (direction.x == -1) {
+        if (direction.y == 1) {
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else if (direction.y == -1) {
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else {
+            active_PCs[player].pc_mov.restrict_move_on_x_axis(false);
+        }
+    } else { // x = 0
+        if (direction.y == 1) {
+            active_PCs[player].pc_mov.restrict_move_on_y_axis(true);
+        } else if (direction.y == -1) {
+            
+        }
+    }*/
+
 }
 
 void TestScene::character_stairs_collision(int player, int block) {
-    active_PCs[player].pc_mov.is_in_ground(true);
+    //active_PCs[player].pc_mov.is_in_ground(true);
     active_PCs[player].pc_mov.is_in_stairs(true);
 }
 

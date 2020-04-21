@@ -26,13 +26,25 @@ bool inRange(int low, int high, int x) {
 	//return ((a1.x <= (a2.x + a2.w) || a2.x <= (a1.x + a1.w)) && (a1.y >= (a2.y + a2.h) || a2.y >= (a1.y + a1.h)));
  }
 
+Vector2 distance_between_area_center(Area a1, Area a2) {
+	Vector2 mid_adr1 = Vector2(a1.x + (a1.w/2), a1.y + (a1.h/2));
+	
+	Vector2 mid_adr2 = Vector2(a2.x + (a2.w/2), a2.y + (a2.h/2));
+	
+	mid_adr1 -= mid_adr2;
+	//mid_adr1 /= sqrt((mid_adr1.x * mid_adr1.x) + (mid_adr1.y * mid_adr1.y) );
+	//mid_adr1 /= mid_adr1.length();
+	return mid_adr1;
+ }
+
  Vector2 direction_between_areas(Area a1, Area a2) {
 	Vector2 mid_adr1 = Vector2(a1.x + (a1.w/2), a1.y + (a1.h/2));
 	
 	Vector2 mid_adr2 = Vector2(a2.x + (a2.w/2), a2.y + (a2.h/2));
 	
 	mid_adr1 -= mid_adr2;
-	mid_adr1 /= mid_adr1.length();
+	mid_adr1 /= sqrt((mid_adr1.x * mid_adr1.x) + (mid_adr1.y * mid_adr1.y) );
+	//mid_adr1 /= mid_adr1.length();
 
 	mid_adr1.x = round(mid_adr1.x);
 	mid_adr1.y = round(mid_adr1.y);
