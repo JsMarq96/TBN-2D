@@ -56,7 +56,6 @@ void TestScene::update(double seconds_elapsed, double time) {
         active_PCs[obj_id].pc_mov.is_in_stairs(false);
     }
 
-    //in_ground = false;
     std::stack<Collision> cols = collision_detection();
 
     // Execute collision events before calculating the movements
@@ -165,7 +164,7 @@ void TestScene::loadScene(int index) {
             Sprite new_spr;
             PC_behaviour new_beh;
             int id;
-            //std::cout << t1.height << "-" << t1.width << std::endl;            
+
             switch(element) {
                 case GROUND_BLOCK:
 					new_spr = Sprite(Area(16 * 2,0,16,16));
@@ -234,8 +233,6 @@ void TestScene::render(Image *framebuffer) {
 
     // Relative to the camera
     area_pos.x -= camera.x, area_pos.y -= camera.y;
-	//objects_in_scene[area_id].image.clamp_to_camera(camera, user_pos.x, user_pos.y, &postion_camera_space, &in_image_coordinates );
-	//std::cout << new_x << "," << new_y  << "," <<  (size.w * index_x) + (size.w - new_w)  << "," <<  (size.h * index_y) + (size.h - new_h) <<std::endl;
 	
 	framebuffer->drawImage(area_img, area_pos.x, area_pos.y, 0, 0, 48, 48);
 }
@@ -275,9 +272,6 @@ void TestScene::block_character_collision(int player, int block) {
 
 void TestScene::character_stairs_collision(int player, int block) {
     active_PCs[player].pc_mov.is_in_stairs(true);
-    
-    //active_PCs[player].pc_mov.is_in_ground(true);
-    
 }
 
 void TestScene::area_npc_collision(int player, int npc) {
@@ -285,7 +279,22 @@ void TestScene::area_npc_collision(int player, int npc) {
 }
 
 void TestScene::character_death_collision(int player, int death_block) {
+    if (char_id == player) {
+        // DEATH
+    }
 
+    // Play sound of char death
+    // Remove the NPC for the active player list
+    active_PCs.erase(player);
+    for (auto it = moving_objs.begin(); it != moving_objs.end(); it++) {
+        if (*it == player) {
+            moving_objs.erase(it);
+            break;
+        }
+        
+    }
+
+    object_enabled[player] = false;
 }
 
 // Clean the scene
