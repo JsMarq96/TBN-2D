@@ -21,9 +21,22 @@ void TestScene::init() {
             this->area_npc_collision(a, b);
         }, "area", "npc");
 
+    // Collisions with stairs
     col_man.add_collision_event([=](int a, int b) {
             this->character_stairs_collision(a, b);
         }, "player", "stairs");
+
+    col_man.add_collision_event([=](int a, int b) {
+            this->character_stairs_collision(a, b);
+        }, "npc", "stairs");
+
+    col_man.add_collision_event([=](int a, int b) {
+            this->character_death_collision(a, b);
+        }, "npc", "death");
+
+    col_man.add_collision_event([=](int a, int b) {
+            this->character_death_collision(a, b);
+        }, "player", "death");
 }
 
 void TestScene::update(double seconds_elapsed, double time) {
@@ -31,6 +44,8 @@ void TestScene::update(double seconds_elapsed, double time) {
     // detection
     for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
         int obj_id = it->first;
+        
+
         if (obj_id != char_id)
             active_PCs[obj_id].active = false;
 
@@ -57,11 +72,11 @@ void TestScene::update(double seconds_elapsed, double time) {
         int obj_id = it->first;
 
         Vector2 obj_speed = active_PCs[obj_id].pc_mov.get_speed();
-        // Update on screen position
+
         objects_in_scene[obj_id].position.x += seconds_elapsed * obj_speed.x;
         objects_in_scene[obj_id].position.y += seconds_elapsed * obj_speed.y;
         
-        if (obj_id == char_id)
+        if (obj_id == char_id){
             // Make the area trail the user in its center
             objects_in_scene[area_id].position.x = objects_in_scene[char_id].position.x - 16;
             objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 16;
@@ -69,6 +84,7 @@ void TestScene::update(double seconds_elapsed, double time) {
             // Make the camera trail the user
             camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
             camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
+        }
                 
         // Character animation
         int orientation = active_PCs[obj_id].pc_mov.get_orientation();
@@ -118,8 +134,11 @@ void TestScene::button_press_events(int buttons_pressed) {
     for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) { 
         int obj_id = it->first;
 
-        if (!active_PCs[obj_id].active)
+        // If the object is not active, we stop comanding them
+        if (!active_PCs[obj_id].active) {
+            active_PCs[obj_id].pc_mov.move_to_direction(0, 0);
             continue;
+        }
 
         active_PCs[obj_id].pc_mov.move_to_direction(directions.x, directions.y);
 
@@ -155,7 +174,7 @@ void TestScene::loadScene(int index) {
                     break;
                 case PLAYER:
 					new_spr = Sprite(Area(0,16,16,16));// 
-                    char_id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 12, 16), true, "player");
+                    char_id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 8, 16), true, "player");
 					new_spr = Sprite(Area(0, 16 * 2, 32, 32));
 					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "area");
                     
@@ -175,7 +194,7 @@ void TestScene::loadScene(int index) {
                     break;
                 case NPC1:
                     new_spr = Sprite(Area(0, 16*2 ,16,16));//
-                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 12, 12),true, "npc");
+                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 8, 12),true, "npc");
                     
                     // Add movement behabiours
                     new_beh.active = false;
@@ -190,6 +209,9 @@ void TestScene::loadScene(int index) {
                 /*case GOAL:
                     GameScene::add_obj_to_scene(tmp, x * CELL_SIZE, y * CELL_SIZE, true, "goal");
                     break;*/
+                case DEATH_BLOCK:
+                    add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "death");
+                    break;
                 case CAMERA:
                     camera.x = x_coord;
                     camera.y = y_coord;
@@ -260,4 +282,18 @@ void TestScene::character_stairs_collision(int player, int block) {
 
 void TestScene::area_npc_collision(int player, int npc) {
     active_PCs[npc].active = true;
+}
+
+void TestScene::character_death_collision(int player, int death_block) {
+
+}
+
+// Clean the scene
+void TestScene::close() {
+    Scene::close();
+    // Remove the active character map
+    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
+        active_PCs.erase(it->first);
+        moving_objs.pop_back();
+    }
 }

@@ -21,7 +21,8 @@ enum MapElements : unsigned char {
     GOAL = 1,
     NPC1 = 32,
     NPC2 = 21,
-    CAMERA = 3
+    CAMERA = 3,
+    DEATH_BLOCK = 5
 };
 
 class Map { 

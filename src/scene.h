@@ -18,7 +18,7 @@ typedef std::unordered_map<std::string, int> map_scene_ids;
  *  1) Init_event
  *  2) (if necessary) button_press_event
  *  3) Collision calculation
- *  4) main
+ *  4) update
  *  5) Render
  *  6) go to 2
  *  7) delete_event
@@ -47,17 +47,19 @@ protected:
 
     Image level_tileset;
     
+    int *curr_level_index;
+    
 public:
     map_scene_ids in_scene_elements;
     // Scene events
-    virtual void delete_event() {};
+    virtual void close();
     virtual void update(double seconds_elapsed, double time) {};
     virtual void button_press_events(int pressed_controls) {};
     virtual void init() {};
 
     Scene();
-    //Scene(CollisionsManager &new_col_man);
-    void set_foregrond_index();
+    Scene(int *level_index) { curr_level_index = level_index; Scene();};
+
     void loadScene(const char * map_dir);
     
     int add_obj_to_scene(Sprite &spr, int x, int y, bool active);
@@ -66,8 +68,8 @@ public:
     int add_obj_to_scene(Sprite &spr, int x, int y, int radius, bool active, std::string labels);
     virtual std::stack<Collision> collision_detection();
 
+
     virtual void update_obj_position(int index, int new_x, int new_y);
-    //virtual void update_obj_position_delta(int index, int incr_x, int incr_y);
     virtual void activate_obj(int index, bool new_state);
     virtual void render(Image *framebuffer);
     void render_sprite(Image *framebuffer, Area &camera, int x, int y, Sprite &spr);

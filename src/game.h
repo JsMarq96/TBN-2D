@@ -27,6 +27,13 @@ public:
 	int fps;
 	bool must_exit;
 
+	//
+	int score;
+	int current_scene_index;
+	int prev_scene_index;
+
+	std::vector<Scene*> game_scenes;
+
 	//audio
 	Synth synth;
 

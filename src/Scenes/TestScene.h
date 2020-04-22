@@ -40,11 +40,12 @@ private:
 
     Image area_img;
 public:
-    TestScene() {}
+    TestScene(int *game_scene_pointer) { curr_level_index = game_scene_pointer; Scene(); }
 
     void init();
     void loadScene(int index);
     void update(double seconds_elapsed, double time);
+    void close();
     void button_press_events( int pressed_contrls);
     void render(Image *framebuffer); //{ Scene::render(framebuffer);}
     std::stack<Collision> collision_detection();
@@ -53,6 +54,7 @@ public:
     void block_character_collision(int char_id, int block_id);
     void character_stairs_collision(int player, int block);
     void area_npc_collision(int player, int npc);
+    void character_death_collision(int player, int death_block);
 };
 
 #endif

@@ -73,14 +73,14 @@ void Movement::restrict_move_on_y_axis(bool up) {
 
 Vector2 Movement::get_speed() {
     // Limit movement by collisions
-    
     if (collision_orientations[D_BOTTOM]) {
+        //(collision_orientations[D_BOTTOM] && (collision_orientations[D_BOTTOM_LEFT || collision_orientations[D_BOTTOM_RIGHT]]))) {
         obj_speed.y = clamp(obj_speed.y, speed * -1, 0);
 
         is_in_ground(true);
     } 
     
-    if (collision_orientations[D_TOP]) {
+    if (collision_orientations[D_TOP] || collision_orientations[D_TOP_LEFT] || collision_orientations[D_TOP_RIGHT]) {
         obj_speed.y = clamp(obj_speed.y, 0, speed);
             is_jumping = false;
             jumpspeed.seek(0);

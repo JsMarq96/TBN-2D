@@ -11,7 +11,6 @@ Game* Game::instance = NULL;
 
 Color bgcolor(130, 80, 100);
 
-TestScene *current_scene;
 Image minifont;
 
 Game::Game(int window_width, int window_height, SDL_Window* window)
@@ -27,6 +26,10 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	time = 0.0f;
 	elapsed_time = 0.0f;
 
+	score = 0;
+	current_scene_index = 0;
+	prev_scene_index = -1;
+
 	/*font.loadTGA("data/bitmap-font-white.tga"); //load bitmap-font image
 	minifont.loadTGA("data/mini-font-white-4x6.tga"); //load bitmap-font image
 	sprite.loadTGA("data/spritesheet.tga"); //example to load an sprite
@@ -38,8 +41,7 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	//synth.osc1.amplitude = 0.5;
 	//Sprite char_spr = Sprite(character);
 
-	current_scene = new TestScene();
-	current_scene->init();
+	game_scenes.push_back( (Scene*) new TestScene(&current_scene_index));
 }
 
 //what to do when the image has to be draw
@@ -59,7 +61,7 @@ void Game::render(void)
 		//framebuffer.drawImage( sprite, 0, 0, Area(0,0,14,18) );	//draws only a part of an image
 		//framebuffer.drawText( "Hello World", 0, 0, font );				//draws some text using a bitmap font in an image (assuming every char is 7x9)
 		//framebuffer.drawText( toString(time), 1, 10, minifont,4,6);	//draws some text using a bitmap font in an image (assuming every char is 4x6)
-	current_scene->render(&framebuffer);
+	game_scenes[current_scene_index]->render(&framebuffer);
 	//Image* tile_set = ImageManager::getImage("data/tileset.tga");
 	//Image im = tile_set->getArea(0,16,16,16);
 	//framebuffer.drawImage(im, 0,0, 0, 0, 16, 16);
@@ -73,6 +75,15 @@ void Game::update(double seconds_elapsed)
 {
 	//Add here your update method
 	//...
+
+	if (current_scene_index != prev_scene_index) {
+		// Clean prev scene
+		if (prev_scene_index > 0 && game_scenes.size() > prev_scene_index)
+			game_scenes[prev_scene_index]->close();
+		// Init the new scene
+		game_scenes[current_scene_index]->init();
+		prev_scene_index = current_scene_index;
+	}
 
 	int pressed_controls = 0;
 	//to read the gamepad state
@@ -101,8 +112,8 @@ void Game::update(double seconds_elapsed)
 	{
 		pressed_controls ^= LEFT;
 	}
-	current_scene->button_press_events(pressed_controls);
-	current_scene->update(seconds_elapsed, time);
+	game_scenes[current_scene_index]->button_press_events(pressed_controls);
+	game_scenes[current_scene_index]->update(seconds_elapsed, time);
 }
 
 //Keyboard event handler (sync input)
