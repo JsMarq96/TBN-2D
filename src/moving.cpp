@@ -6,17 +6,21 @@ Vector2 Movement::get_direction() {
 
 void Movement::calculate_gravity() {
     // Gravity
-    if (is_jumping) {
-        int twen_val = jumpspeed.step(1);
+    if (!in_stairs) {
+        if (is_jumping) {
+            int twen_val = jumpspeed.step(1);
 
-        obj_speed.y = twen_val * -1;
-        if (jumpspeed.progress() == 1) {
-            jumpspeed.seek(0);
-            is_jumping = false;
-            //std::cout << "Finished jump"<< std::endl;
+            obj_speed.y = twen_val * -1;
+            if (jumpspeed.progress() == 1) {
+                jumpspeed.seek(0);
+                is_jumping = false;
+            }
         }
+        obj_speed.y  += weight;
+    } else {
+        // Slow down fall while in stairs
+        obj_speed.y  += weight / 2;
     }
-    obj_speed.y  += weight;
 
     // Collision array cleanup
     for (int i = 0; i <= 8; i++) {
@@ -27,6 +31,7 @@ void Movement::calculate_gravity() {
 void Movement::try_to_start_jump() {
     if (in_stairs) {
         obj_speed.y = -1 * speed;
+        is_jumping = true;
     } else if (!is_jumping && in_groud) {
         is_jumping = true;
     }
@@ -81,26 +86,6 @@ Vector2 Movement::get_speed() {
             jumpspeed.seek(0);
         
     }
-
-    
-
-    /*if (in_groud) {
-        if (collision_orientations[D_RIGHT]) {
-        obj_speed.x = clamp(obj_speed.x, speed * -1, 0);
-        } 
-        if (collision_orientations[D_LEFT]) {
-            obj_speed.x = clamp(obj_speed.x, 0, speed);
-        }
-    } else {
-        if (collision_orientations[D_TOP_RIGHT] || collision_orientations[D_RIGHT] || collision_orientations[D_BOTTOM_RIGHT]) {
-            obj_speed.x = clamp(obj_speed.x, speed, 0);
-            //move_to(-3,0);
-        } 
-        if (collision_orientations[D_TOP_LEFT] || collision_orientations[D_LEFT] || collision_orientations[D_BOTTOM_LEFT]) {
-            obj_speed.x = clamp(obj_speed.x, 0, speed);
-            //move_to(4,0);
-        }
-    }*/
     
 
     if (obj_speed.x != 0)
@@ -122,7 +107,7 @@ void Movement::add_obstacle(Vector2 position) {
    if (position.x == 0 && position.y == 1) {
        id = D_TOP;
    } else if (position.x == 1 && position.y == 1) {
-       id = D_TOP_LEFT;
+        id = D_TOP_LEFT;
    } else if (position.x == 1 && position.y == 0) {
        id = D_LEFT;
    } else if (position.x == 1 && position.y == -1) {

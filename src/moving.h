@@ -47,7 +47,7 @@ public:
     };
 
     // Setters
-    void is_in_stairs(bool is) {in_stairs = is;};
+    void is_in_stairs(bool is) {in_stairs = is; if (is) {jumpspeed.seek(0); is_jumping = false;}};
     void is_in_ground(bool is) {in_groud = is; if (is) {jumpspeed.seek(0); is_jumping = false;}};
     void try_to_start_jump();
     bool ground() {return in_groud;}
