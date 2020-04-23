@@ -13,7 +13,6 @@ void MenuScene::button_press_events(int pressed_contrls) {
 
     if (index > 4) {
         *(curr_level_index) = *curr_level_index + 1;
-        std::cout << index << std::endl;
     }
 
 }

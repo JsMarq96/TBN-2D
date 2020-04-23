@@ -1,4 +1,5 @@
 #include "TestScene.h"
+#include "game.h"
 
 // ------- Scene Events
 void TestScene::init() {
@@ -30,6 +31,7 @@ void TestScene::init() {
             this->character_stairs_collision(a, b);
         }, "npc", "stairs");
 
+    // Death colliders
     col_man.add_collision_event([=](int a, int b) {
             this->character_death_collision(a, b);
         }, "npc", "death");
@@ -37,6 +39,11 @@ void TestScene::init() {
     col_man.add_collision_event([=](int a, int b) {
             this->character_death_collision(a, b);
         }, "player", "death");
+
+    // Game end collider
+    col_man.add_collision_event([=](int a, int b) {
+            this->character_with_goal_collision(a, b);
+        }, "player", "goal");
 }
 
 void TestScene::update(double seconds_elapsed, double time) {
@@ -199,17 +206,17 @@ void TestScene::loadScene(int index) {
                     break;
                 case GOAL_BASE_RIGHT:
 					new_spr = Sprite(Area(16 * 3, 5 * 16, 16, 16));
-                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal_n");
                     //block_num++;
                     break;
                 case GOAL_TOP_RIGHT:
 					new_spr = Sprite(Area(16 * 3, 6 * 16, 16, 16));
-                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal_n");
                     //block_num++;
                     break;
                 case GOAL_TOP_LEFT:
 					new_spr = Sprite(Area(16 * 2, 6 * 16, 16, 16));
-                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal_n");
                     //block_num++;
                     break;
                 case PLAYER:
@@ -287,6 +294,18 @@ std::stack<Collision> TestScene::collision_detection() {
 	return call_stack;
 }
 
+
+// Clean the scene
+void TestScene::close() {
+    Scene::close();
+
+    // Remove the active character map
+    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
+        active_PCs.erase(it->first);
+        moving_objs.pop_back();
+    }
+}
+
 // ----------- COLIDER EVENTS
 
 // TODO: Rework event to improve clarity
@@ -321,9 +340,18 @@ void TestScene::area_npc_collision(int player, int npc) {
     active_PCs[npc].active = true;
 }
 
+void TestScene::character_with_goal_collision(int player, int goal_id) {
+    // Recount score
+    Game::instance->score = moving_objs.size() * 10;
+    // Advance stage
+    *(curr_level_index) = *curr_level_index + 1;
+}
+
 void TestScene::character_death_collision(int player, int death_block) {
     if (char_id == player) {
         // DEATH
+        // Advance stage to the end
+        *(curr_level_index) = *curr_level_index + 1;
     }
 
     // Play sound of char death
@@ -338,15 +366,4 @@ void TestScene::character_death_collision(int player, int death_block) {
     }
 
     object_enabled[player] = false;
-}
-
-// Clean the scene
-void TestScene::close() {
-    Scene::close();
-
-    // Remove the active character map
-    for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
-        active_PCs.erase(it->first);
-        moving_objs.pop_back();
-    }
 }

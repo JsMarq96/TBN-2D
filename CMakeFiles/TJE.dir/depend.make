@@ -42,6 +42,7 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/Managers/ImageManager.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/collisions.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/controlls.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/framework.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/game.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/image.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/includes.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/map.h
@@ -49,6 +50,7 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/moving.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/scene.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/scenesprite.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/sprite.h
+CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/synth.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/utils.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/dispatcher.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: tweeny/include/easing.h

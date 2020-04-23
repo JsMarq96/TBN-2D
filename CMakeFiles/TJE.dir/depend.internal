@@ -43,6 +43,7 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o
  src/collisions.h
  src/controlls.h
  src/framework.h
+ src/game.h
  src/image.h
  src/includes.h
  src/map.h
@@ -50,6 +51,7 @@ CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o
  src/scene.h
  src/scenesprite.h
  src/sprite.h
+ src/synth.h
  src/utils.h
  tweeny/include/dispatcher.h
  tweeny/include/easing.h
