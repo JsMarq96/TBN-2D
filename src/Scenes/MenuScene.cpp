@@ -1,5 +1,6 @@
 #include "MenuScene.h"
 
+// For passing the slides
 void MenuScene::button_press_events(int pressed_contrls) {
     if (pressed_contrls != 0) {
         if (pressed_contrls != prev_keys) {

@@ -47,6 +47,8 @@ void CollisionsManager::calculate_collisions_to(std::array<SceneSprite, MAX_ELEM
 											 std::vector<int> &from_objs,
 											 int obj_count,
 											 std::stack<Collision> *col_stack) {
+	if (obj_count == 0)
+		return;
 	for (auto it=from_objs.begin(); it!=from_objs.end(); ++it) {
 		int curr_index = *it;
 		for (int j = 0; j <= obj_count; j++) {

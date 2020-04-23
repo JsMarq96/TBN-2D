@@ -33,7 +33,6 @@ void Scene::render(Image *framebuffer) {
     int i;
 	for (i = 0; i < last_inserted; i++) {
 		if (object_enabled[i]) {
-			
 			render_sprite(framebuffer, camera, objects_in_scene[i].position.x, objects_in_scene[i].position.y, objects_in_scene[i].image);
 		}
 	}
@@ -99,6 +98,12 @@ std::stack<Collision> Scene::collision_detection() {
 }
 
 void Scene::close() {
+	for (int i = 0; i < last_inserted; i++) {
+		obj_labels[i] = Labels();
+		objects_in_scene[i] = SceneSprite();
+		object_enabled[i] = false;
+	}
+
 	last_inserted = 0;
 	camera = Area(0,0, 160, 120);
 }

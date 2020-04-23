@@ -79,11 +79,13 @@ void Game::update(double seconds_elapsed)
 
 	if (current_scene_index != prev_scene_index) {
 		// Clean prev scene
-		if (prev_scene_index > 0 && game_scenes.size() > prev_scene_index)
+		if (prev_scene_index >= 0 && game_scenes.size() >= prev_scene_index) {
 			game_scenes[prev_scene_index]->close();
+		}
+			
 		// Init the new scene
 		game_scenes[current_scene_index]->init();
-		prev_scene_index = current_scene_index;
+		prev_scene_index = current_scene_index;		
 	}
 
 	int pressed_controls = 0;
@@ -123,6 +125,7 @@ void Game::onKeyDown( SDL_KeyboardEvent event )
 	switch(event.keysym.sym)
 	{
 		case SDLK_ESCAPE: must_exit = true; break; //ESC key, kill the app
+		case SDLK_r: current_scene_index = 0; break;
 	}
 }
 

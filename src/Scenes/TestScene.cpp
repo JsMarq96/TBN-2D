@@ -336,6 +336,7 @@ void TestScene::character_death_collision(int player, int death_block) {
 // Clean the scene
 void TestScene::close() {
     Scene::close();
+
     // Remove the active character map
     for (auto it = active_PCs.begin(); it != active_PCs.end(); it++) {
         active_PCs.erase(it->first);

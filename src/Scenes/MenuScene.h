@@ -6,6 +6,10 @@
 #include "image.h"
 #include "Managers/ImageManager.h"
 
+/**
+ * A scene just of the Main menu and the tutorial 
+*/
+
 class MenuScene: Scene {
 private:
     int *curr_level_index;

@@ -184,6 +184,13 @@ build CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: CXX_COMPILER__TJE_Debug ../
   OBJECT_DIR = CMakeFiles/TJE.dir
   OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Scenes
 
+build CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: CXX_COMPILER__TJE_Debug ../src/Scenes/MenuScene.cpp || cmake_object_order_depends_target_TJE_DEBUG
+  DEP_FILE = CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o.d
+  FLAGS = -g   -std=gnu++11
+  INCLUDES = -I../src -I/usr/include/SDL2 -I../tweeny/include
+  OBJECT_DIR = CMakeFiles/TJE.dir
+  OBJECT_FILE_DIR = CMakeFiles/TJE.dir/src/Scenes
+
 build CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: CXX_COMPILER__TJE_Debug ../src/Managers/ImageManager.cpp || cmake_object_order_depends_target_TJE_DEBUG
   DEP_FILE = CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o.d
   FLAGS = -g   -std=gnu++11
@@ -199,7 +206,7 @@ build CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: CXX_COMPILER__TJE_Debu
 #############################################
 # Link the executable TJE
 
-build TJE: CXX_EXECUTABLE_LINKER__TJE_Debug CMakeFiles/TJE.dir/src/main.cpp.o CMakeFiles/TJE.dir/src/game.cpp.o CMakeFiles/TJE.dir/src/framework.cpp.o CMakeFiles/TJE.dir/src/utils.cpp.o CMakeFiles/TJE.dir/src/image.cpp.o CMakeFiles/TJE.dir/src/input.cpp.o CMakeFiles/TJE.dir/src/synth.cpp.o CMakeFiles/TJE.dir/src/collisions.cpp.o CMakeFiles/TJE.dir/src/scene.cpp.o CMakeFiles/TJE.dir/src/sprite.cpp.o CMakeFiles/TJE.dir/src/controlls.cpp.o CMakeFiles/TJE.dir/src/map.cpp.o CMakeFiles/TJE.dir/src/scenesprite.cpp.o CMakeFiles/TJE.dir/src/moving.cpp.o CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o | /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so
+build TJE: CXX_EXECUTABLE_LINKER__TJE_Debug CMakeFiles/TJE.dir/src/main.cpp.o CMakeFiles/TJE.dir/src/game.cpp.o CMakeFiles/TJE.dir/src/framework.cpp.o CMakeFiles/TJE.dir/src/utils.cpp.o CMakeFiles/TJE.dir/src/image.cpp.o CMakeFiles/TJE.dir/src/input.cpp.o CMakeFiles/TJE.dir/src/synth.cpp.o CMakeFiles/TJE.dir/src/collisions.cpp.o CMakeFiles/TJE.dir/src/scene.cpp.o CMakeFiles/TJE.dir/src/sprite.cpp.o CMakeFiles/TJE.dir/src/controlls.cpp.o CMakeFiles/TJE.dir/src/map.cpp.o CMakeFiles/TJE.dir/src/scenesprite.cpp.o CMakeFiles/TJE.dir/src/moving.cpp.o CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o | /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -lGL  -lGLU  -lglut  -lXmu  -lXi  -lSDL2
