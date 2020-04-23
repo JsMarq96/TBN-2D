@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/js/Documents/TJE2020_2D/src/Managers/ImageManager.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o"
+  "/home/js/Documents/TJE2020_2D/src/Scenes/GameEndScene.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/Scenes/TestScene.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o"
   "/home/js/Documents/TJE2020_2D/src/collisions.cpp" "/home/js/Documents/TJE2020_2D/CMakeFiles/TJE.dir/src/collisions.cpp.o"

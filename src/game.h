@@ -10,7 +10,6 @@
 #include "utils.h"
 #include "synth.h"
 #include "scene.h"
-#include "Scenes/MenuScene.h"
 
 class Game
 {

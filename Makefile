@@ -229,6 +229,33 @@ src/Managers/ImageManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.s
 .PHONY : src/Managers/ImageManager.cpp.s
 
+src/Scenes/GameEndScene.o: src/Scenes/GameEndScene.cpp.o
+
+.PHONY : src/Scenes/GameEndScene.o
+
+# target to build an object file
+src/Scenes/GameEndScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o
+.PHONY : src/Scenes/GameEndScene.cpp.o
+
+src/Scenes/GameEndScene.i: src/Scenes/GameEndScene.cpp.i
+
+.PHONY : src/Scenes/GameEndScene.i
+
+# target to preprocess a source file
+src/Scenes/GameEndScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.i
+.PHONY : src/Scenes/GameEndScene.cpp.i
+
+src/Scenes/GameEndScene.s: src/Scenes/GameEndScene.cpp.s
+
+.PHONY : src/Scenes/GameEndScene.s
+
+# target to generate assembly for a file
+src/Scenes/GameEndScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.s
+.PHONY : src/Scenes/GameEndScene.cpp.s
+
 src/Scenes/MenuScene.o: src/Scenes/MenuScene.cpp.o
 
 .PHONY : src/Scenes/MenuScene.o
@@ -678,6 +705,9 @@ help:
 	@echo "... src/Managers/ImageManager.o"
 	@echo "... src/Managers/ImageManager.i"
 	@echo "... src/Managers/ImageManager.s"
+	@echo "... src/Scenes/GameEndScene.o"
+	@echo "... src/Scenes/GameEndScene.i"
+	@echo "... src/Scenes/GameEndScene.s"
 	@echo "... src/Scenes/MenuScene.o"
 	@echo "... src/Scenes/MenuScene.i"
 	@echo "... src/Scenes/MenuScene.s"

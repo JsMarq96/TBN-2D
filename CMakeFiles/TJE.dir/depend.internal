@@ -6,6 +6,22 @@ CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o
  /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.h
  src/framework.h
  src/image.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o
+ /home/js/Documents/TJE2020_2D/src/Scenes/GameEndScene.cpp
+ /home/js/Documents/TJE2020_2D/src/Scenes/GameEndScene.h
+ src/Managers/ImageManager.h
+ src/collisions.h
+ src/controlls.h
+ src/framework.h
+ src/game.h
+ src/image.h
+ src/includes.h
+ src/map.h
+ src/scene.h
+ src/scenesprite.h
+ src/sprite.h
+ src/synth.h
+ src/utils.h
 CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o
  /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.cpp
  /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.h
@@ -64,6 +80,7 @@ CMakeFiles/TJE.dir/src/framework.cpp.o
  /home/js/Documents/TJE2020_2D/src/framework.h
  /home/js/Documents/TJE2020_2D/src/includes.h
 CMakeFiles/TJE.dir/src/game.cpp.o
+ /home/js/Documents/TJE2020_2D/src/Scenes/GameEndScene.h
  /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.h
  /home/js/Documents/TJE2020_2D/src/Scenes/TestScene.h
  /home/js/Documents/TJE2020_2D/src/collisions.h
@@ -108,7 +125,6 @@ CMakeFiles/TJE.dir/src/input.cpp.o
  /home/js/Documents/TJE2020_2D/src/utils.h
 CMakeFiles/TJE.dir/src/main.cpp.o
  /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.h
- /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.h
  /home/js/Documents/TJE2020_2D/src/collisions.h
  /home/js/Documents/TJE2020_2D/src/controlls.h
  /home/js/Documents/TJE2020_2D/src/framework.h
@@ -177,7 +193,6 @@ CMakeFiles/TJE.dir/src/synth.cpp.o
  /home/js/Documents/TJE2020_2D/src/synth.h
 CMakeFiles/TJE.dir/src/utils.cpp.o
  /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.h
- /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.h
  /home/js/Documents/TJE2020_2D/src/collisions.h
  /home/js/Documents/TJE2020_2D/src/controlls.h
  /home/js/Documents/TJE2020_2D/src/framework.h

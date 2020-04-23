@@ -6,6 +6,22 @@ CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/Managers/ImageManager.h
 CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/framework.h
 CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/image.h
 
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/Scenes/GameEndScene.cpp
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/Scenes/GameEndScene.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/Managers/ImageManager.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/collisions.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/controlls.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/framework.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/game.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/image.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/includes.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/map.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/scene.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/scenesprite.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/sprite.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/synth.h
+CMakeFiles/TJE.dir/src/Scenes/GameEndScene.cpp.o: src/utils.h
+
 CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Scenes/MenuScene.cpp
 CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Scenes/MenuScene.h
 CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Managers/ImageManager.h
@@ -63,6 +79,7 @@ CMakeFiles/TJE.dir/src/framework.cpp.o: src/framework.cpp
 CMakeFiles/TJE.dir/src/framework.cpp.o: src/framework.h
 CMakeFiles/TJE.dir/src/framework.cpp.o: src/includes.h
 
+CMakeFiles/TJE.dir/src/game.cpp.o: src/Scenes/GameEndScene.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/Scenes/MenuScene.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/Scenes/TestScene.h
 CMakeFiles/TJE.dir/src/game.cpp.o: src/collisions.h
@@ -107,7 +124,6 @@ CMakeFiles/TJE.dir/src/input.cpp.o: src/input.h
 CMakeFiles/TJE.dir/src/input.cpp.o: src/utils.h
 
 CMakeFiles/TJE.dir/src/main.cpp.o: src/Managers/ImageManager.h
-CMakeFiles/TJE.dir/src/main.cpp.o: src/Scenes/MenuScene.h
 CMakeFiles/TJE.dir/src/main.cpp.o: src/collisions.h
 CMakeFiles/TJE.dir/src/main.cpp.o: src/controlls.h
 CMakeFiles/TJE.dir/src/main.cpp.o: src/framework.h
@@ -176,7 +192,6 @@ CMakeFiles/TJE.dir/src/synth.cpp.o: src/synth.cpp
 CMakeFiles/TJE.dir/src/synth.cpp.o: src/synth.h
 
 CMakeFiles/TJE.dir/src/utils.cpp.o: src/Managers/ImageManager.h
-CMakeFiles/TJE.dir/src/utils.cpp.o: src/Scenes/MenuScene.h
 CMakeFiles/TJE.dir/src/utils.cpp.o: src/collisions.h
 CMakeFiles/TJE.dir/src/utils.cpp.o: src/controlls.h
 CMakeFiles/TJE.dir/src/utils.cpp.o: src/framework.h

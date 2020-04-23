@@ -118,6 +118,8 @@ set( Framework
     src/Scenes/TestScene.h
     src/Scenes/MenuScene.h
     src/Scenes/MenuScene.cpp
+    src/Scenes/GameEndScene.h
+    src/Scenes/GameEndScene.cpp
 
     src/Managers/ImageManager.cpp
     src/Managers/ImageManager.h

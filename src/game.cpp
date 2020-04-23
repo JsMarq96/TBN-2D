@@ -3,7 +3,9 @@
 #include "input.h"
 #include "image.h"
 #include "controlls.h"
+#include "Scenes/MenuScene.h"
 #include "Scenes/TestScene.h"
+#include "Scenes/GameEndScene.h"
 
 #include <cmath>
 
@@ -26,7 +28,7 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	time = 0.0f;
 	elapsed_time = 0.0f;
 
-	score = 0;
+	score = -1;
 	current_scene_index = 0;
 	prev_scene_index = -1;
 
@@ -41,8 +43,9 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	//synth.osc1.amplitude = 0.5;
 	//Sprite char_spr = Sprite(character);
 
-	game_scenes.push_back((Scene*) new MenuScene(&current_scene_index));
+	game_scenes.push_back( (Scene*) new MenuScene(&current_scene_index));
 	game_scenes.push_back( (Scene*) new TestScene(&current_scene_index));
+	game_scenes.push_back( (Scene*) new GameEndScene(&current_scene_index));
 }
 
 //what to do when the image has to be draw
