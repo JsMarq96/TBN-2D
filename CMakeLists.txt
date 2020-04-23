@@ -113,8 +113,12 @@ set( Framework
     src/scenesprite.cpp
     src/moving.h
     src/moving.cpp
+    
     src/Scenes/TestScene.cpp
     src/Scenes/TestScene.h
+    src/Scenes/MenuScene.h
+    src/Scenes/MenuScene.cpp
+
     src/Managers/ImageManager.cpp
     src/Managers/ImageManager.h
 )

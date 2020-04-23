@@ -39,6 +39,7 @@ private:
     std::unordered_map<int, PC_behaviour> active_PCs;
 
     Image area_img;
+    Image background_image;
 public:
     TestScene(int *game_scene_pointer) { curr_level_index = game_scene_pointer; Scene(); }
 

@@ -2,7 +2,7 @@
 
 // ------- Scene Events
 void TestScene::init() {
-    level_tileset = *ImageManager::getImage("data/tileset_v4.tga");
+    level_tileset = *ImageManager::getImage("data/tileset.tga");
     loadScene(0);
     area_img = *ImageManager::getImage("data/circle.tga");
     camera_speed = Vector2(0,0);
@@ -166,10 +166,44 @@ void TestScene::loadScene(int index) {
             int id;
 
             switch(element) {
+                // Ground blocks
                 case GROUND_BLOCK:
-					new_spr = Sprite(Area(16 * 2,0,16,16));
+                                          // Position within the tile map
+					new_spr = Sprite(Area(16 * 5, 16 * 5, 16,16));
                     add_obj_to_scene(new_spr, x_coord, y_coord, true, "block");
                     block_num++;
+                    break;
+                case LEFT_GROUND_BLOCK:
+					new_spr = Sprite(Area(16 * 4, 5 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "block");
+                    block_num++;
+                    break;
+                case RIGHT_GROUND_BLOCK:
+					new_spr = Sprite(Area(16 * 6, 5 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "block");
+                    block_num++;
+                    break;
+
+                // Goal
+                case GOAL_BASE_LEFT:
+					new_spr = Sprite(Area(16 * 2, 5 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    //block_num++;
+                    break;
+                case GOAL_BASE_RIGHT:
+					new_spr = Sprite(Area(16 * 3, 5 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    //block_num++;
+                    break;
+                case GOAL_TOP_RIGHT:
+					new_spr = Sprite(Area(16 * 3, 6 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    //block_num++;
+                    break;
+                case GOAL_TOP_LEFT:
+					new_spr = Sprite(Area(16 * 2, 6 * 16, 16, 16));
+                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "goal");
+                    //block_num++;
                     break;
                 case PLAYER:
 					new_spr = Sprite(Area(0,16,16,16));// 
@@ -226,6 +260,8 @@ void TestScene::loadScene(int index) {
 
 
 void TestScene::render(Image *framebuffer) {
+    Image *background = ImageManager::getImage("data/back.tga");
+    framebuffer->drawImage(*background,0,0);
     Scene::render(framebuffer);
 
     // Render the player influence..? area

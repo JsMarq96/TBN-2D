@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o"
+  "CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o"
   "CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o"
   "CMakeFiles/TJE.dir/src/collisions.cpp.o"
   "CMakeFiles/TJE.dir/src/controlls.cpp.o"

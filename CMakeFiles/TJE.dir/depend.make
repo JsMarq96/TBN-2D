@@ -6,6 +6,20 @@ CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/Managers/ImageManager.h
 CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/framework.h
 CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o: src/image.h
 
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Scenes/MenuScene.cpp
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Scenes/MenuScene.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/Managers/ImageManager.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/collisions.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/controlls.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/framework.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/image.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/includes.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/map.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/scene.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/scenesprite.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/sprite.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o: src/utils.h
+
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/Scenes/TestScene.cpp
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/Scenes/TestScene.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o: src/Managers/ImageManager.h

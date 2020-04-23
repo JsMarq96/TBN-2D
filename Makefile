@@ -229,6 +229,33 @@ src/Managers/ImageManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.s
 .PHONY : src/Managers/ImageManager.cpp.s
 
+src/Scenes/MenuScene.o: src/Scenes/MenuScene.cpp.o
+
+.PHONY : src/Scenes/MenuScene.o
+
+# target to build an object file
+src/Scenes/MenuScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o
+.PHONY : src/Scenes/MenuScene.cpp.o
+
+src/Scenes/MenuScene.i: src/Scenes/MenuScene.cpp.i
+
+.PHONY : src/Scenes/MenuScene.i
+
+# target to preprocess a source file
+src/Scenes/MenuScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.i
+.PHONY : src/Scenes/MenuScene.cpp.i
+
+src/Scenes/MenuScene.s: src/Scenes/MenuScene.cpp.s
+
+.PHONY : src/Scenes/MenuScene.s
+
+# target to generate assembly for a file
+src/Scenes/MenuScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TJE.dir/build.make CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.s
+.PHONY : src/Scenes/MenuScene.cpp.s
+
 src/Scenes/TestScene.o: src/Scenes/TestScene.cpp.o
 
 .PHONY : src/Scenes/TestScene.o
@@ -651,6 +678,9 @@ help:
 	@echo "... src/Managers/ImageManager.o"
 	@echo "... src/Managers/ImageManager.i"
 	@echo "... src/Managers/ImageManager.s"
+	@echo "... src/Scenes/MenuScene.o"
+	@echo "... src/Scenes/MenuScene.i"
+	@echo "... src/Scenes/MenuScene.s"
 	@echo "... src/Scenes/TestScene.o"
 	@echo "... src/Scenes/TestScene.i"
 	@echo "... src/Scenes/TestScene.s"

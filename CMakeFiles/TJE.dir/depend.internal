@@ -6,6 +6,20 @@ CMakeFiles/TJE.dir/src/Managers/ImageManager.cpp.o
  /home/js/Documents/TJE2020_2D/src/Managers/ImageManager.h
  src/framework.h
  src/image.h
+CMakeFiles/TJE.dir/src/Scenes/MenuScene.cpp.o
+ /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.cpp
+ /home/js/Documents/TJE2020_2D/src/Scenes/MenuScene.h
+ src/Managers/ImageManager.h
+ src/collisions.h
+ src/controlls.h
+ src/framework.h
+ src/image.h
+ src/includes.h
+ src/map.h
+ src/scene.h
+ src/scenesprite.h
+ src/sprite.h
+ src/utils.h
 CMakeFiles/TJE.dir/src/Scenes/TestScene.cpp.o
  /home/js/Documents/TJE2020_2D/src/Scenes/TestScene.cpp
  /home/js/Documents/TJE2020_2D/src/Scenes/TestScene.h

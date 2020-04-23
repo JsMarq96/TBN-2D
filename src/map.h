@@ -15,14 +15,20 @@ struct sMapHeader {
 };
 
 enum MapElements : unsigned char {
-    GROUND_BLOCK = 2,
+    GROUND_BLOCK = 85,
+    LEFT_GROUND_BLOCK = 84,
+    RIGHT_GROUND_BLOCK = 86,
     STAIRS = 4,
     PLAYER = 16,
     GOAL = 1,
     NPC1 = 32,
     NPC2 = 21,
     CAMERA = 3,
-    DEATH_BLOCK = 5
+    DEATH_BLOCK = 5,
+    GOAL_BASE_LEFT = 82,
+    GOAL_BASE_RIGHT = 83,
+    GOAL_TOP_LEFT = 98,
+    GOAL_TOP_RIGHT = 99
 };
 
 class Map { 
