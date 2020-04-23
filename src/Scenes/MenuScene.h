@@ -20,7 +20,7 @@ private:
                             "data/menu/tut4.tga"};
 public:
     MenuScene(int *game_scene_pointer) { curr_level_index = game_scene_pointer; Scene(); };
-    void init() {index = 0; prev_keys = -1;};
+    void init() {index = 0; prev_keys = 10;};
     void loadScene(int index) {};
     void update(double seconds_elapsed, double time) {};
     void close() {};
