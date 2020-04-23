@@ -81,8 +81,15 @@ void TestScene::update(double seconds_elapsed, double time) {
             objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 19;
             
             // Make the camera trail the user
-            camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
-            camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
+            Vector2 tmp;
+            tmp.x = objects_in_scene[char_id].position.x - (camera.w/2) - camera.x;
+            tmp.y = objects_in_scene[char_id].position.y - (camera.h/2) - camera.y;
+
+            camera.x += tmp.x * seconds_elapsed * 1.5;
+            camera.y += tmp.y * seconds_elapsed * 1.5;
+
+            //camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
+            //camera.y = objects_in_scene[char_id].position.y - (camera.h/2);
         }
                 
         // Character animation
