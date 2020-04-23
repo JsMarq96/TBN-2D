@@ -117,6 +117,8 @@ void TestScene::update(double seconds_elapsed, double time) {
             } else {
                 objects_in_scene[obj_id].image.set_indexes((((int) (time * 10)) % 6) + 8,0);
             }
+
+            Game::instance->synth.playSample("data/sounds/walk.wav",1,false);
             
         } else {
             // Jumping

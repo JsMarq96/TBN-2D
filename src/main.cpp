@@ -93,6 +93,8 @@ void mainLoop()
 	long now = start_time;
 	long frames_this_second = 0;
 
+	bool is_inited = false;
+
 	while (!game->must_exit)
 	{
 		Input::update();
@@ -100,7 +102,13 @@ void mainLoop()
 		//render frame
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		game->render();
+
 		SDL_GL_SwapWindow(game->window);
+
+		if (!is_inited) {
+			//game->enableAudio();
+			is_inited = true;
+		}
 
 		//update events
 		while(SDL_PollEvent(&sdlEvent))

@@ -7,6 +7,8 @@
 #include "Scenes/TestScene.h"
 #include "Scenes/GameEndScene.h"
 
+#include <unistd.h>
+
 #include <cmath>
 
 Game* Game::instance = NULL;
@@ -38,14 +40,19 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	*/
 	minifont.loadTGA("data/bitmap-font-white.tga"); //load bitmap-font image
 
-	//enableAudio(); //enable this line if you plan to add audio to your application
-	//synth.playSample("data/coin.wav",1,true);
-	//synth.osc1.amplitude = 0.5;
+	 //enable this line if you plan to add audio to your application
 	//Sprite char_spr = Sprite(character);
 
 	game_scenes.push_back( (Scene*) new MenuScene(&current_scene_index));
 	game_scenes.push_back( (Scene*) new TestScene(&current_scene_index));
 	game_scenes.push_back( (Scene*) new GameEndScene(&current_scene_index));
+
+	//SDL_Delay(1000);
+	//enableAudio();
+	
+	synth.playSample("data/sounds/walk.wav", 1, true);
+	synth.osc1.amplitude = 0.0;
+	//SDL_Delay(1000);
 }
 
 //what to do when the image has to be draw
