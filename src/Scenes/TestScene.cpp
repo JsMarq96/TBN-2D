@@ -2,9 +2,9 @@
 
 // ------- Scene Events
 void TestScene::init() {
+    level_tileset = *ImageManager::getImage("data/tileset_v4.tga");
     loadScene(0);
     area_img = *ImageManager::getImage("data/circle.tga");
-    area_img.scale(48, 48);
     camera_speed = Vector2(0,0);
 
     moving_objs.push_back(char_id);
@@ -77,8 +77,8 @@ void TestScene::update(double seconds_elapsed, double time) {
         
         if (obj_id == char_id){
             // Make the area trail the user in its center
-            objects_in_scene[area_id].position.x = objects_in_scene[char_id].position.x - 16;
-            objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 16;
+            objects_in_scene[area_id].position.x = objects_in_scene[char_id].position.x - 19;
+            objects_in_scene[area_id].position.y = objects_in_scene[char_id].position.y - 19;
             
             // Make the camera trail the user
             camera.x = objects_in_scene[char_id].position.x - (camera.w/2);
@@ -174,8 +174,8 @@ void TestScene::loadScene(int index) {
                 case PLAYER:
 					new_spr = Sprite(Area(0,16,16,16));// 
                     char_id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 8, 16), true, "player");
-					new_spr = Sprite(Area(0, 16 * 2, 32, 32));
-					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 16, false, "area");
+					new_spr = Sprite(Area(0,0,0,0));
+					area_id = add_obj_to_scene(new_spr, x_coord, y_coord, 24, false, "area");
                     
                     // Character behebiuor movement
                     new_beh.active = true;
@@ -188,16 +188,16 @@ void TestScene::loadScene(int index) {
                     break;
                 case STAIRS:
                     new_spr = Sprite(Area(16 * 4, 0,16,16));
-                    add_obj_to_scene(new_spr, x_coord, y_coord, true, "stairs");
+                    add_obj_to_scene(new_spr, x_coord, y_coord, Area(3, 0, 8, 16), true, "stairs");
                     stairs_num++;
                     break;
                 case NPC1:
                     new_spr = Sprite(Area(0, 16*2 ,16,16));//
-                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 4, 8, 12),true, "npc");
+                    id = add_obj_to_scene(new_spr, x_coord, y_coord, Area(4, 0, 8, 16) ,true, "npc");
                     
                     // Add movement behabiours
                     new_beh.active = false;
-                    new_beh.pc_mov.config(60, 110, 100, JUMP_DURATION);
+                    new_beh.pc_mov.config(GRAVITY, 90, 190, JUMP_DURATION);
                     new_beh.type = PC_SMALL;
 
                     active_PCs[id] = new_beh;

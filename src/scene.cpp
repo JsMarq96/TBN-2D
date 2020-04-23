@@ -3,7 +3,6 @@
 // GENERIC SCENE METHODS ---------------
 Scene::Scene() {
 	last_inserted = 0;
-	level_tileset = *ImageManager::getImage("data/tileset_v4.tga");
 }
 
 // Scene customization

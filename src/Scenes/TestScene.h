@@ -32,7 +32,7 @@ private:
     int char_id;
     int area_id;
 
-    const char* levels[1] = {"data/level1.map"};
+    const char* levels[1] = {"data/level2.map"};
     int curr_level = 0;
 
     std::vector<int> moving_objs;
