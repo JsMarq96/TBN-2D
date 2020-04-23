@@ -41,6 +41,7 @@ Game::Game(int window_width, int window_height, SDL_Window* window)
 	//synth.osc1.amplitude = 0.5;
 	//Sprite char_spr = Sprite(character);
 
+	game_scenes.push_back((Scene*) new MenuScene(&current_scene_index));
 	game_scenes.push_back( (Scene*) new TestScene(&current_scene_index));
 }
 
