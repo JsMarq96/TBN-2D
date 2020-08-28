@@ -1,5 +1,5 @@
 # T.B.D 2D
-[![Ingame screen capture](https://raw.githubusercontent.com/JsMarq96/2dTBN/master/imgs/gamescreen.png?token=AL6CLYLT647OSTQUWM4ATUS7JD7UC)]
+[![Ingame screen capture](imgs/gamescreen.png)]
 
 ## About the project
 Based on the framework provided by Javier Agenjo, teacher of the UPF, for the class of Electronic Games.<br/>
